@@ -66,7 +66,7 @@ client.on("message", (msg) => {
   }
 
   // Cek apakah pesan adalah "!ping"
-  if (msg.body == "!ping") {
+  if (msg.body === "!ping") {
     // Balas pesan dengan "pong"
     msg.reply("pong");
   }
