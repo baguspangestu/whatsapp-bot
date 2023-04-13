@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./client.js",
-    "dev": "nodemon ./client.js"
+    "dev": "nodemon ./client.js",
+    "deploy": "pm2 start ./client.js --name whatsapp-bot"
   },
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
