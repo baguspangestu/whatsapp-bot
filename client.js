@@ -18,7 +18,7 @@ const downloadFile = async (msg) => {
     // Path folder untuk menyimpan file
     const filePath = path.join(__dirname, "files");
 
-    // Jika  folder belum ada, buat folder baru
+    // Jika folder belum ada, buat folder baru
     if (!fs.existsSync(filePath)) fs.mkdirSync(filePath);
 
     // gabungkan path folder dan nama file
