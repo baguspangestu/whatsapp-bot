@@ -1,4 +1,4 @@
-# CONTOH BOT WHATSAPP
+# CONTOH BOT WHATSAPP SEDERHANA
 
 Ketika di run maka akan disuruh scan QR Code untuk login WhatsApp
 ![Screenshot](screenshot.png)
