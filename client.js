@@ -18,15 +18,13 @@ const downloadFile = async (msg) => {
     // Path folder untuk menyimpan file
     const filePath = path.join(__dirname, "files");
 
-    // cek apakah folder sudah ada
-    if (!fs.existsSync(filePath)) {
-      // Jika belum, buat folder baru
-      fs.mkdirSync(filePath);
-    }
+    // Jika  folder belum ada, buat folder baru
+    if (!fs.existsSync(filePath)) fs.mkdirSync(filePath);
 
+    // gabungkan path folder dan nama file
     const filePathAndName = `${filePath}\\${fileName}`;
 
-    // Simpan file ke folder
+    // Simpan file
     fs.writeFileSync(
       filePathAndName,
       Buffer.from(attachmentData.data, "base64").toString("binary"),
