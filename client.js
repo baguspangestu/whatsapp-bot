@@ -40,7 +40,7 @@ client.on("ready", () => {
 client.on("message", async (msg) => {
   // Cek apakah ada media
   if (msg.hasMedia) {
-    // Download media
+    // Panggil function downloadFile
     downloadFile(msg);
   }
 
