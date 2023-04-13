@@ -11,21 +11,32 @@ const downloadFile = async (msg) => {
 
     // Ambil ekstensi file dari mimetype
     const extension = attachmentData.mimetype.split("/")[1];
+
     // Buat nama file dengan id pesan dan ekstensi
     const fileName = `${msg.id.id}.${extension}`;
 
-    // Simpan file ke folder files
-    const storagePath = path.join(__dirname, "files");
+    // Path folder untuk menyimpan file
+    const filePath = path.join(__dirname, "files");
+
+    // cek apakah folder sudah ada
+    if (!fs.existsSync(filePath)) {
+      // Jika belum, buat folder baru
+      fs.mkdirSync(filePath);
+    }
+
+    const filePathAndName = `${filePath}/${fileName}`;
+
+    // Simpan file ke folder
     fs.writeFileSync(
-      `${storagePath}/${fileName}`,
+      filePathAndName,
       Buffer.from(attachmentData.data, "base64").toString("binary"),
       "binary"
     );
 
     // Cek apakah file berhasil disimpan
-    const isFileExists = fs.existsSync(`${storagePath}/${fileName}`);
+    const isFileExists = fs.existsSync(filePathAndName);
     if (isFileExists) {
-      console.log("File berhasil disimpan.");
+      console.log(`File berhasil disimpan di ${filePathAndName}`);
     } else {
       console.log("Gagal menyimpan file.");
     }
