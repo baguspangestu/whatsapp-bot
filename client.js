@@ -24,7 +24,7 @@ const downloadFile = async (msg) => {
       fs.mkdirSync(filePath);
     }
 
-    const filePathAndName = `${filePath}/${fileName}`;
+    const filePathAndName = `${filePath}\\${fileName}`;
 
     // Simpan file ke folder
     fs.writeFileSync(
