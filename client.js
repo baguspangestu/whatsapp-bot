@@ -49,7 +49,7 @@ client.on("ready", () => {
 });
 
 // Kalo ada pesan masuk
-client.on("message", async (msg) => {
+client.on("message", (msg) => {
   // Cek apakah ada file
   if (msg.hasMedia) {
     // Panggil function downloadFile
