@@ -16,7 +16,7 @@ const downloadFile = async (msg) => {
   // Buat nama file dengan id pesan dan ekstensi
   const fileName = `${msg.id.id}.${extension}`;
 
-  // Simpan file ke folder images
+  // Simpan file ke folder files
   const storagePath = path.join(__dirname, "files");
   fs.writeFileSync(
     `${storagePath}/${fileName}`,
