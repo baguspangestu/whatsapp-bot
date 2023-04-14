@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node ./client.js",
-    "dev": "nodemon ./client.js",
-    "deploy": "pm2 start ./client.js --name whatsapp-bot"
+    "start": "node ./client.js --no-sandbox",
+    "dev": "nodemon ./client.js --no-sandbox",
+    "deploy": "pm2 start ./client.js --name whatsapp-bot -- --no-sandbox"
   },
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
