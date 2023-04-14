@@ -12,6 +12,7 @@
     "whatsapp-web.js": "^1.19.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "pm2": "^5.3.0"
   }
 }
